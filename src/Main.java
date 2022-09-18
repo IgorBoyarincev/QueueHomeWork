@@ -14,7 +14,10 @@ public class Main {
         while (!persons.isEmpty()) {
             Person person = persons.poll();
             if (person.getCountTicket() == 0) {
-                System.out.println("\t"+person.getFullName()+" откатался на аттракционах");
+                System.out.println("\t" + person.getFullName() + " откатался на аттракционах");
+            } else if (person.getCountTicket() == 1) {
+                person.useTicket();
+                System.out.println(person.getFullName() + " прокатился на аттракционе");
             } else {
                 person.useTicket();
                 System.out.println(person.getFullName() + " прокатился на аттракционе");
