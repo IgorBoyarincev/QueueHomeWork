@@ -14,10 +14,10 @@ public class Main {
         while (!persons.isEmpty()) {
             Person person = persons.poll();
             if (person.getCountTicket() == 0) {
-                System.out.println("\t"+person.getFullName()+" откатался на аттракционе");
+                System.out.println("\t"+person.getFullName()+" РѕС‚РєР°С‚Р°Р»СЃСЏ РЅР° Р°С‚С‚СЂР°РєС†РёРѕРЅР°С…");
             } else {
                 person.useTicket();
-                System.out.println(person.getFullName() + " прокатился на атракционе");
+                System.out.println(person.getFullName() + " РїСЂРѕРєР°С‚РёР»СЃСЏ РЅР° Р°С‚С‚СЂР°РєС†РёРѕРЅРµ");
                 persons.offer(person);
             }
         }
@@ -26,15 +26,15 @@ public class Main {
     public static List<Person> generateClients() {
         Random random = new Random();
         List<Person> list = new ArrayList<>();
-        Person person1 = new Person("Иванов Иван", random.nextInt(10));
+        Person person1 = new Person("РР°РІРЅРѕРІ РРІР°РЅ", random.nextInt(10));
         list.add(person1);
-        Person person2 = new Person("Петров Петр", random.nextInt(10));
+        Person person2 = new Person("РџРµС‚СЂРѕРІ РџРµС‚СЂ", random.nextInt(10));
         list.add(person2);
-        Person person3 = new Person("Федоров Федор", random.nextInt(10));
+        Person person3 = new Person("РђР»РµРєСЃР°РЅРґСЂРѕРІ РђР»РµРєСЃР°РЅРґСЂ", random.nextInt(10));
         list.add(person3);
-        Person person4 = new Person("Семенов Семен", random.nextInt(10));
+        Person person4 = new Person("Р’Р°СЃРёР»СЊРµРІ Р’Р°СЃРёР»РёР№", random.nextInt(10));
         list.add(person4);
-        Person person5 = new Person("Васильев Василий", random.nextInt(10));
+        Person person5 = new Person("Р¤РµРґРѕСЂРѕРІ Р¤РµРґРѕСЂ", random.nextInt(10));
         list.add(person5);
         return list;
     }
