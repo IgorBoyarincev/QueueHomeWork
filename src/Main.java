@@ -6,23 +6,24 @@ import java.util.concurrent.LinkedTransferQueue;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> listPersons = GenerateClients();
+        List<Person> listPersons = generateClients();
         Queue<Person> persons = new LinkedTransferQueue<>();
         for (Person listPerson : listPersons) {
             persons.offer(listPerson);
         }
         while (!persons.isEmpty()) {
-            if (persons.peek().getCountTicket() == 0) {
-                System.out.println("\t" + persons.poll().getFullName() + " откатался на аттракционах");
+            Person person = persons.poll();
+            if (person.getCountTicket() == 0) {
+                System.out.println("\t"+person.getFullName()+" откатался на аттракционе");
             } else {
-                persons.peek().useTicket();
-                System.out.println(persons.peek().getFullName() + " прокатился на аттракционе");
-                persons.offer(persons.poll());
+                person.useTicket();
+                System.out.println(person.getFullName() + " прокатился на атракционе");
+                persons.offer(person);
             }
         }
     }
 
-    public static List<Person> GenerateClients() {
+    public static List<Person> generateClients() {
         Random random = new Random();
         List<Person> list = new ArrayList<>();
         Person person1 = new Person("Иванов Иван", random.nextInt(10));
