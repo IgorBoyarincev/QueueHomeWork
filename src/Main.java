@@ -16,8 +16,9 @@ public class Main {
             if (person.getCountTicket() == 0) {
                 System.out.println("\t" + person.getFullName() + " откатался на аттракционах");
             } else if (person.getCountTicket() == 1) {
-                person.useTicket();
                 System.out.println(person.getFullName() + " прокатился на аттракционе");
+                person.useTicket();
+                System.out.println("\t" + person.getFullName() + " откатался на аттракционе");
             } else {
                 person.useTicket();
                 System.out.println(person.getFullName() + " прокатился на аттракционе");
